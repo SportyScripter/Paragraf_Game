@@ -1,5 +1,5 @@
 /dist
-adventure-game/node_modules/
+./adventure-game/node_modules/*
 vercel.json
 .env
 .env.local
