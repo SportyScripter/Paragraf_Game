@@ -25,3 +25,8 @@
     "vite": "^5.0.8"
   }
 }
+{
+  "devDependencies": {
+    "create-vite": "^5.1.0"
+  }
+}
