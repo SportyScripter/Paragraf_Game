@@ -1,0 +1,132 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* This makes the container take the full height of the viewport */
+}
+h1 {
+  margin-bottomOne: 10px; /* Add space below the heading */
+}
+
+/* App.css */
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.start-button {
+  font-size:40px;
+  padding: 30px 60px;
+  border: none;
+  border-radius: 40px;
+  background-color: rgb(26, 24, 24);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 10px 16px rgba(0, 0, 0, 0.1);
+}
+
+.start-button:hover {
+  background-color: rgb(60, 119, 63);
+}
+
+.game-title {
+  font-size: 80px; /* Możesz dostosować rozmiar tekstu według potrzeb */
+  margin-bottom: 80px; /* Opcjonalne dostosowanie marginesu poniżej tytułu */
+}
+/* Dodaj odpowiednie klasy dla przycisków */
+.buttonSelectionGame {
+  width: 500px;
+  height: 100px;
+  font-size: 42px;
+  margin-bottom: 15px;
+  border-radius: 40px;
+  cursor: pointer;
+  color: white;
+  background-color: rgb(26, 24, 24);
+  box-shadow: 0 10px 16px rgba(0, 0, 0, 0.1);
+}
+.buttonSelectionGame:hover {
+  background-color: rgb(60, 119, 63);
+}
+
+/* Dodaj styl dla kontenera z wyborem gier */
+.game-selection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 300px;
+  margin-right: 900px;
+}
+
+.welcome-text {
+  text-align: center;
+  font-size: 54px;
+  font-family: 'Arial', sans-serif;
+  margin-top: -400px; /* Dostosuj margines według potrzeb */
+}
+
+.bounce-letter {
+  display: inline-block;
+  transform-origin: bottom;
+  animation: bounceAnimation 0.5s ease-out alternate infinite;
+}
+
+@keyframes bounceAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+.select-game {
+  font-size: 34px;
+  font-family: 'Arial', sans-serif;
+  margin-top: 0px; /* Dostosuj margines według potrzeb */
+}
+.paragraphOne {
+  padding: 20px;
+  background-color: #6f7e6f;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Cień */
+  border-radius: 80px;
+  border-style: double;
+  font-size: 34px;
+  font-family: 'Apple Chancery', cursive;
+  
+}
+.gameSettings {
+  font-size: 34px;
+  font-family: 'Apple Chancery', cursive;
+  font-style: italic;
+  margin-top: -100px; /* Dostosuj margines według potrzeb */
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Wysokość na całą wysokość ekranu */
+}
+.buttonSelectionScennario {
+  width: 1000px;
+  height: 100px;
+  top: 100px;
+  margin-bottom: 40px;
+  border-radius: 40px;
+  color: white;
+  font-size: 25px;
+  font-family: FreeMono, monospace;
+  background-color: rgb(26, 24, 24);
+  box-shadow: 0 10px 16px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}

@@ -1,0 +1,12 @@
+/* src/Home.css */
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    font-size: 1.2em;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
