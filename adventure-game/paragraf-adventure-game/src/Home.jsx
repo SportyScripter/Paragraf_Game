@@ -15,7 +15,7 @@ const Home = () => {
     <div className="container">
       {gameStarted ? (
         // Code for an active game
-        <h1>The game is ongoing... please wait :)</h1>
+        <h1>The game is ongoing... please wait</h1>
       ) : (
         // Code for the start page
         <div className="home-container">
