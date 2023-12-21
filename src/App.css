@@ -67,15 +67,16 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-bottom: -100px;
-  margin-right: 900px;
+  margin-bottom:auto;
+  margin-right: auto;
 }
 
 .welcome-text span{
   text-align: center;
   font-size: 54px;
   font-family: 'Arial', sans-serif;
-  margin-top: -400px; /* Dostosuj margines według potrzeb */
+  margin-top:auto; /* Dostosuj margines według potrzeb */
+  color: rgb(37, 153, 104);
 }
 
 .bounce-letter {
@@ -96,8 +97,10 @@ body {
 .select-game {
   font-size: 44px;
   font-family: 'Arial', sans-serif;
-  margin-top: 0px; /* Dostosuj margines według potrzeb */
+  margin-top: 10px; /* Dostosuj margines według potrzeb */
   height: 90px;
+  width: 500px;
+  color: rgb(161, 95, 95);
 }
 .paragraphOne {
   padding: auto;
