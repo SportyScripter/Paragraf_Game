@@ -1,6 +1,6 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
+  max-width: 1200px;
+  margin: auto;
   padding: 2rem;
   text-align: center;
 }
@@ -10,7 +10,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh; /* This makes the container take the full height of the viewport */
+  height: 90vh; /* This makes the container take the full height of the viewport */
 }
 h1 {
   margin-bottomOne: 10px; /* Add space below the heading */
@@ -49,7 +49,7 @@ body {
 /* Dodaj odpowiednie klasy dla przycisków */
 .buttonSelectionGame {
   width: 500px;
-  height: 100px;
+  height: 90px;
   font-size: 42px;
   margin-bottom: 15px;
   border-radius: 40px;
@@ -67,7 +67,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-bottom: 300px;
+  margin-bottom: -100px;
   margin-right: 900px;
 }
 
@@ -94,34 +94,36 @@ body {
 }
 
 .select-game {
-  font-size: 34px;
+  font-size: 44px;
   font-family: 'Arial', sans-serif;
   margin-top: 0px; /* Dostosuj margines według potrzeb */
+  height: 90px;
 }
 .paragraphOne {
-  padding: 20px;
+  padding: auto;
   background-color: #6f7e6f;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Cień */
   border-radius: 80px;
   border-style: double;
-  font-size: 34px;
+  font-size: 25px;
   font-family: 'Apple Chancery', cursive;
+  font-language-override: 'pl';
   
 }
 .gameSettings {
-  font-size: 34px;
+  font-size: 24px;
   font-family: 'Apple Chancery', cursive;
   font-style: italic;
-  margin-top: -100px; /* Dostosuj margines według potrzeb */
+  margin-top: 0px; /* Dostosuj margines według potrzeb */
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Wysokość na całą wysokość ekranu */
+  height: auto; /* Wysokość na całą wysokość ekranu */
 }
 .buttonSelectionScennario {
   width: 1000px;
   height: 100px;
   top: 100px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   border-radius: 40px;
   color: white;
   font-size: 25px;
