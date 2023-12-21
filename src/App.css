@@ -71,7 +71,7 @@ body {
   margin-right: 900px;
 }
 
-.welcome-text {
+.welcome-text span{
   text-align: center;
   font-size: 54px;
   font-family: 'Arial', sans-serif;
