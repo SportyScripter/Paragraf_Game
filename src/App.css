@@ -106,7 +106,7 @@ body {
   border-radius: 80px;
   border-style: double;
   font-size: 25px;
-  font-family: 'Apple Chancery', cursive;
+  font-family: 'Apple Chancery', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-language-override: 'pl';
   
 }
