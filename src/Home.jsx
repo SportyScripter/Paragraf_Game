@@ -90,8 +90,6 @@ const Home = () => {
                     <p>{gameStories[selectedGame].par1_1}</p>
                     <button className="buttonSelectionScennario" onClick={() => selectScenario('sc1_1_1')}>
                       {gameStories[selectedGame].sc1_1_1}
-                      <h1>{selectedScenario}</h1>
-                      <h1>{dynamicClass}</h1>
                     </button>
                     <button className="buttonSelectionScennario" onClick={() => selectScenario('sc1_1_2')}>
                       {gameStories[selectedGame].sc1_1_2}
