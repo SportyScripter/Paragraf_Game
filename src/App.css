@@ -1,20 +1,32 @@
-#root {
-  max-width: 1200px;
+:root {
   margin: auto;
   padding: 2rem;
   text-align: center;
-}
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: rgba(255, 255, 255, 0.87);
+  color-scheme: light dark;
+  /* background-color: #ff0000ea; */
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  }
 
 .container {
-  display: flex;
+  display: auto;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 90vh; /* This makes the container take the full height of the viewport */
+  height: 100%;
+
 }
+  
 h1 {
-  margin-bottomOne: 10px; /* Add space below the heading */
-}
+  margin-bottom: 10px;
+} */
 
 /* App.css */
 
@@ -24,18 +36,22 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 100%;
 }
 
 .start-button {
   font-size:40px;
   padding: 30px 60px;
-  border: none;
+  border: 1px solid transparent;
   border-radius: 40px;
-  background-color: rgb(26, 24, 24);
-  color: white;
+  padding: 0.6em 1.2em;
+  font-weight: 500;
+  background-color: #1a1a1a;
   cursor: pointer;
   box-shadow: 0 10px 16px rgba(0, 0, 0, 0.1);
+}
+button:hover {
+  border-color: #1026e6;
 }
 
 .start-button:hover {
@@ -55,7 +71,7 @@ body {
   border-radius: 40px;
   cursor: pointer;
   color: white;
-  background-color: rgb(26, 24, 24);
+  /* background-color: rgb(26, 24, 24); */
   box-shadow: 0 10px 16px rgba(0, 0, 0, 0.1);
 }
 .buttonSelectionGame:hover {
@@ -103,16 +119,16 @@ body {
   color: rgb(161, 95, 95);
 }
 .paragraphOne {
-  padding: auto;
-  background-color: #6f7e6f;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Cień */
+  padding: 30px 20px;
+  background-color: rgba(111, 126, 111, 0.4);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-radius: 80px;
   border-style: double;
   font-size: 25px;
   font-family: 'Apple Chancery', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-language-override: 'pl';
-  
 }
+
 .gameSettings {
   font-size: 24px;
   font-family: 'Apple Chancery', cursive;
@@ -120,7 +136,7 @@ body {
   margin-top: 0px; /* Dostosuj margines według potrzeb */
   justify-content: center;
   align-items: center;
-  height: auto; /* Wysokość na całą wysokość ekranu */
+  height: 100%; /* Wysokość na całą wysokość ekranu */
 }
 .buttonSelectionScennario {
   width: 1000px;
@@ -131,7 +147,50 @@ body {
   color: white;
   font-size: 25px;
   font-family: FreeMono, monospace;
-  background-color: rgb(26, 24, 24);
+  background-color: rgb(26, 24, 24,0.8);
   box-shadow: 0 10px 16px rgba(0, 0, 0, 0.1);
   cursor: pointer;
+}
+.buttonSelectionScennario:hover {
+  background-color: rgb(60, 119, 63);
+}
+
+.EnzoandNova {
+  background-image: url('public\image\EnzoandNovaIntro.jpeg');
+  border-radius: 40px;
+  background-size: cover;
+  background-position: center;
+}
+
+.SuperTommy {
+  background-image: url('public\image\SuperTommyIntro.jpeg');
+  border-radius: 40px;
+  background-size: auto;
+  background-position: center;
+}
+
+.SuperTommysc1 {
+  background-color: red;
+  background-size: cover;
+}
+
+.SuperTommysc2 {
+  background-color: green;
+}
+
+.SuperTommypart1_1 {
+  background-color: blue;
+}
+
+/* Dla Enzo and Nova */
+.EnzoandNovasc1 {
+  background-color: violet;
+}
+
+.EnzoandNovasc2 {
+  background-color: pink;
+}
+
+.EnzoandNovapart1_1 {
+  background-color: blue;
 }
