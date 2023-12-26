@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import './App.css';
-
 const Home = () => {
   const startGame = () => {setGameStarted(true);};
   const [gameStarted, setGameStarted] = useState(false);
-  const [selectedGame, setSelectedGame] = useState(null);
-  const [selectedScenario, setSelectedScenario] = useState(null);
+  const [selectedGame, setSelectedGame] = useState('');
+  const [selectedScenario, setSelectedScenario] = useState('');
   const [storyProgress, setStoryProgress] = useState(0);
-  const [showNextOptions, setShowNextOptions] = useState(false);
 
   // Initialize text state
   const [text, setText] = useState("Witaj w mojej aplikacji!");
@@ -62,22 +60,23 @@ const Home = () => {
     },
   };
 
-  const selectGame = (gameTitle) => {
-    setSelectedGame(gameTitle);
-  };
-
-  const selectScenario = (scenarioTitle) => {
-    setSelectedScenario(scenarioTitle);
-    setStoryProgress(1); // Start from the first step of the story for the chosen scenario
-  };
-
-  const continueStory = () => {
+  const selectGame = (game) => {
+    setSelectedGame(game);
     setStoryProgress(storyProgress + 1);
-    setShowNextOptions(true);
   };
+
+  const selectScenario = (scenario) => {
+    setSelectedScenario(scenario);
+    setStoryProgress(storyProgress + 1);
+  };
+  const dynamicClass = `${selectedGame.replace(/ /g, '')}${selectedScenario}`;
+
+
+
 
   return (
-    <div className="container">
+    <div className={`container ${dynamicClass}`}>
+      
       {gameStarted ? (
         selectedGame ? (
           // Code for the selected game
@@ -85,12 +84,14 @@ const Home = () => {
             <h1>{selectedGame}</h1>
             {selectedScenario ? (
               // Code for the selected scenario
-              <div className="paragraphOne">
+              <div className= 'paragraphOne'>
                 {selectedScenario === 'sc1' ? (
                   <div>
                     <p>{gameStories[selectedGame].par1_1}</p>
                     <button className="buttonSelectionScennario" onClick={() => selectScenario('sc1_1_1')}>
                       {gameStories[selectedGame].sc1_1_1}
+                      <h1>{selectedScenario}</h1>
+                      <h1>{dynamicClass}</h1>
                     </button>
                     <button className="buttonSelectionScennario" onClick={() => selectScenario('sc1_1_2')}>
                       {gameStories[selectedGame].sc1_1_2}
