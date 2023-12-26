@@ -89,7 +89,7 @@ button:hover {
 
 .welcome-text span{
   text-align: center;
-  font-size: 54px;
+  font-size: 300%;
   font-family: 'Arial', sans-serif;
   margin-top:auto; /* Dostosuj margines według potrzeb */
   color: rgb(37, 153, 104);
@@ -111,7 +111,7 @@ button:hover {
 }
 
 .select-game {
-  font-size: 44px;
+  font-size: 300%;
   font-family: 'Arial', sans-serif;
   margin-top: 10px; /* Dostosuj margines według potrzeb */
   height: 90px;
@@ -122,30 +122,29 @@ button:hover {
   padding: 30px 20px;
   background-color: rgba(111, 126, 111, 0.4);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  border-radius: 80px;
+  border-radius:initial;
   border-style: double;
-  font-size: 25px;
+  font-size: 100%;
   font-family: 'Apple Chancery', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-language-override: 'pl';
+  margin-top: auto;
 }
 
 .gameSettings {
-  font-size: 24px;
+  font-size: 80%;
   font-family: 'Apple Chancery', cursive;
   font-style: italic;
-  margin-top: 0px; /* Dostosuj margines według potrzeb */
   justify-content: center;
   align-items: center;
   height: 100%; /* Wysokość na całą wysokość ekranu */
 }
 .buttonSelectionScennario {
-  width: 1000px;
-  height: 100px;
-  top: 100px;
-  margin-bottom: 20px;
-  border-radius: 40px;
+  width: 100%;
+  height: 10%;
+  margin-bottom: 1%;
+  border-radius: inherit;
   color: white;
-  font-size: 25px;
+  font-size: 100%;
   font-family: FreeMono, monospace;
   background-color: rgb(26, 24, 24,0.8);
   box-shadow: 0 10px 16px rgba(0, 0, 0, 0.1);
@@ -159,6 +158,7 @@ button:hover {
   background-image: url('/public/image/EnzoandNovaIntro.jpeg');
   border-radius: 40px;
   background-size: 100% 100%;
+  background-position: center;
   width: 100%;
   height: 100%;
 }
@@ -167,6 +167,7 @@ button:hover {
   background-image: url('/public/image/SuperTommyIntro.jpeg');
   border-radius: 40px;
   background-size: 100% 100%;
+  background-position: center;
   width: 100%;
   height: 100%;
 }
