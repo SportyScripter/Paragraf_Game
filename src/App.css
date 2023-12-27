@@ -21,7 +21,17 @@
   align-items: center;
   justify-content: center;
   height: 100%;
-
+  background-size: 100% 100%;
+  background-image: url('/public/image/selectgame.jpeg');
+}
+.home-container{
+  display: auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-size: 100% 100%;
+  background-image: url('/public/image/welcome.jpeg');
 }
   
 h1 {
@@ -45,6 +55,7 @@ body {
   border: 1px solid transparent;
   border-radius: 40px;
   padding: 0.6em 1.2em;
+  margin-bottom: 10%;
   font-weight: 500;
   background-color: #1a1a1a;
   cursor: pointer;
@@ -60,19 +71,23 @@ button:hover {
 
 .game-title {
   font-size: 80px; /* Możesz dostosować rozmiar tekstu według potrzeb */
-  margin-bottom: 80px; /* Opcjonalne dostosowanie marginesu poniżej tytułu */
+  margin-bottom: 80px;
+  color: #333; /* Ustaw kolor napisu */
+  border-radius: 20%;
+  padding: 5% 5%;
+  background-color: rgba(255, 255, 255, 0.5)
 }
 /* Dodaj odpowiednie klasy dla przycisków */
 .buttonSelectionGame {
-  width: 500px;
-  height: 90px;
+  width: 100%;
+  height: 90%;
   font-size: 42px;
   margin-bottom: 15px;
   border-radius: 40px;
   cursor: pointer;
   color: white;
-  /* background-color: rgb(26, 24, 24); */
-  box-shadow: 0 10px 16px rgba(0, 0, 0, 0.1);
+  background-color: rgba(24, 23, 23, 0.5)
+
 }
 .buttonSelectionGame:hover {
   background-color: rgb(60, 119, 63);
@@ -85,7 +100,9 @@ button:hover {
   align-items: flex-start;
   margin-bottom:auto;
   margin-right: auto;
+ 
 }
+
 
 .welcome-text span{
   text-align: center;
@@ -275,13 +292,6 @@ button:hover {
   width: 100%;
   height: 100%
 }
-.end{
-  background-image: url('/public/image/SuperTommysc1_2_2.jpeg');
-  border-radius: 40px;
-  background-size: 100% 100%;
-  background-position: center;
-  width: 100%;
-  height: 100%
-}
+
 
 
