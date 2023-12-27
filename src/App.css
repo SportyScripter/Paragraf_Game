@@ -163,7 +163,52 @@ button:hover {
   height: 100%;
 }
 .EnzoandNovasc1 {
-  background-color: violet;
+  background-image: url('/public/image/EnzoandNovasc1.jpeg');
+  border-radius: 40px;
+  background-size: 100% 100%;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+}
+.EnzoandNovasc1_1_1 {
+  background-image: url('/public/image/EnzoandNovasc1_1_1.jpeg');
+  border-radius: 40px;
+  background-size: 100% 100%;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+}
+.EnzoandNovasc1_1_2 {
+  background-image: url('/public/image/EnzoandNovasc1_1_2.jpeg');
+  border-radius: 40px;
+  background-size: 100% 100%;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+}
+.EnzoandNovasc2 {
+  background-image: url('/public/image/EnzoandNovasc2.jpeg');
+  border-radius: 40px;
+  background-size: 100% 100%;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+}
+.EnzoandNovasc1_2_1 {
+  background-image: url('/public/image/EnzoandNovasc1_2_1.jpeg');
+  border-radius: 40px;
+  background-size: 100% 100%;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+}
+.EnzoandNovasc1_2_2 {
+  background-image: url('/public/image/EnzoandNovasc1_2_2.jpeg');
+  border-radius: 40px;
+  background-size: 100% 100%;
+  background-position: center;
+  width: 100%;
+  height: 100%;
 }
 
 .EnzoandNovasc2 {
@@ -208,6 +253,30 @@ button:hover {
 
 .SuperTommysc1_1_2 {
   background-image: url('/public/image/SuperTommysc1_1_2.jpeg');
+  border-radius: 40px;
+  background-size: 100% 100%;
+  background-position: center;
+  width: 100%;
+  height: 100%
+}
+.SuperTommysc1_2_1{
+  background-image: url('/public/image/SuperTommysc1_2_1.jpeg');
+  border-radius: 40px;
+  background-size: 100% 100%;
+  background-position: center;
+  width: 100%;
+  height: 100%
+}
+.SuperTommysc1_2_2{
+  background-image: url('/public/image/SuperTommysc1_2_2.jpeg');
+  border-radius: 40px;
+  background-size: 100% 100%;
+  background-position: center;
+  width: 100%;
+  height: 100%
+}
+.end{
+  background-image: url('/public/image/SuperTommysc1_2_2.jpeg');
   border-radius: 40px;
   background-size: 100% 100%;
   background-position: center;
