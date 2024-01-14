@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState, useRef } from 'react';
 import './App.css';
 const Home = () => {
   const startGame = () => {setGameStarted(true);};
@@ -6,7 +6,17 @@ const Home = () => {
   const [selectedGame, setSelectedGame] = useState('');
   const [selectedScenario, setSelectedScenario] = useState('');
   const [storyProgress, setStoryProgress] = useState(0);
+  const audioRef = useRef(null);
+  const audioSrc = `/public/sound/${selectedGame.replace(/ /g, '')}Intro.mp3`;
+  const audioSrcSc = `/public/sound/${selectedGame.replace(/ /g, '').concat(selectedScenario)}.mp3`;
 
+
+  // Funkcja odtwarzająca dźwięk
+  const playAudio = () => {
+    if (audioRef.current) {
+      audioRef.current.play();
+    }
+  };
   // Initialize text state
   const [text, setText] = useState("Witaj w mojej aplikacji!");
 
@@ -45,18 +55,18 @@ const Home = () => {
       par1_2:"Tommy zdecydował się zaniechać nauki u Mistrza Przyrody i samodzielnie odkrywać granice swojej mocy. Opuszcza świątynię, gotów na własną wyprawę. Wędrując przez dzikie tereny, natyka się na grupę podróżników, którzy potrzebują pomocy w odnalezieniu zaginionego miasta elfów, ukrytego głęboko w magicznym lesie. Tommy stoi przed wyborem:",
       sc1_2_1:"Przyłączyć się do podróżników, korzystając z okazji do poznania nowych ludzi i testowania swoich umiejętności w praktyce.",
       sc1_2_2:"Kontynuować samotną podróż, dążąc do odkrycia kolejnych tajemnic swojej mocy i zrozumienia, jakie zadanie mu przygotowano.",
-      par2_1:"Tommy, posiadając teraz potężne umiejętności kontrolowania przyrody, zwraca się do swojej wioski, aby jej pomóc w obliczu nadchodzącego zagrożenia. Zauważa, że wioska jest ogarnięta niepokojem, a mieszkańcy obawiają się nadchodzącej katastrofy. Tommy decyduje się podjąć działania i stanąć na ich czele, jednak musi dokonać kluczowego wyboru:",
+      par2_1:"Part2_1 Tommy, posiadając teraz potężne umiejętności kontrolowania przyrody, zwraca się do swojej wioski, aby jej pomóc w obliczu nadchodzącego zagrożenia. Zauważa, że wioska jest ogarnięta niepokojem, a mieszkańcy obawiają się nadchodzącej katastrofy. Tommy decyduje się podjąć działania i stanąć na ich czele, jednak musi dokonać kluczowego wyboru:",
       sc2_1_1:"Wysłać skautów, aby zbadali źródło zagrożenia, zdobywając informacje, które pomogą lepiej przygotować wioskę do nadchodzącej konfrontacji.",
       sc2_1_2:"Rozpocząć intensywne szkolenia mieszkańców, ucząc ich podstaw obrony oraz korzystania z przyrodniczych zasobów, aby stawić czoło nadchodzącemu niebezpieczeństwu.",
-      par2_2:"Tommy, posiadając teraz potężne umiejętności kontrolowania przyrody, zastanawia się nad dalszym kierunkiem swojej podróży. Mistrz Przyrody wskazał mu na możliwość odkrycia ukrytych sekretów, które mogą pomóc mu zrozumieć prawdziwe przeznaczenie swoich mocy. Tommy musi teraz podjąć decyzję, która kształtować będzie jego przyszłość:",
-      sc2_2_1:"Podążać dalej za wskazówkami Mistrza Przyrody, aby odkryć ukryte sekrety, które mogą pomóc mu zrozumieć prawdziwe przeznaczenie swoich mocy.",
-      sc2_2_2:"Zwrócić się do wspólnoty magów i uczonych, aby zdobyć nowe perspektywy i spojrzenie na swoje moce, poszukując odpowiedzi na pytania, które dręczą go od dłuższego czasu.",
+      par2_2:"Tommy postanowił podążać dalej za wskazówkami Mistrza Przyrody, aby odkryć ukryte sekrety, które mogą pomóc mu zrozumieć prawdziwe przeznaczenie swoich mocy. Mistrz Przyrody wprowadził go w jeszcze bardziej zaawansowane techniki magii przyrody, ucząc go kontrolować nie tylko elementy, ale także łączyć się z duszami zwierząt i roślin. Tommy stał się prawdziwym strażnikiem przyrody, chroniąc ekosystemy i pomagając zwierzętom w potrzebie.W międzyczasie pojawiło się jednak niebezpieczeństwo. Grupa złowrogich magów ciągle zwiększała swoją moc i zaczęła siać chaos w świecie. Tommy musiał podjąć decyzję:",
+      sc2_2_1:"Pozostać wierny swojemu celowi ochrony przyrody i stawić czoła złowrogim magom, używając swojej mocy przyrody, aby przeciwdziałać ich działaniom i przywrócić harmonię w świecie.",
+      sc2_2_2:"Zaniechać walki i skoncentrować się wyłącznie na odkrywaniu sekretów swoich mocy, ignorując zagrożenie ze strony złowrogich magów, aby dowiedzieć się, jakie jeszcze umiejętności mogą mu pomóc w zrozumieniu swojego przeznaczenia.",
       par2_3:"Tommy dołącza do grupy podróżników, gotowy na nowe wyzwania. Zespół składa się z różnorodnych postaci, w tym doświadczonego łowcy potworów o imieniu Kain, mądrej zaklinaczki magii o imieniu Elara oraz tajemniczego wojownika elfickiego pochodzenia o imieniu Thalorin. Wspólnie przemierzają magiczny las, starając się rozwikłać tajemnicę zaginionego miasta elfów. Tommy zdobywa nowe doświadczenia, doskonaląc swoje umiejętności pod okiem doświadczonych towarzyszy. W miarę jak odkrywają kolejne zakamarki magicznego lasu, napotykają na liczne wyzwania, zarówno przyrodnicze, jak i magiczne, które testują zdolności nowego członka grupy.",
       sc2_3_1:"Tommy odkrywa w ruinach starożytnego elfiego miasta manuskrypty, które poszerzają jego umiejętności magiczne. Staje się kluczowy w rozwiązaniu zagadki, a grupa musi pokonywać coraz potężniejsze zaklęcia, by dotrzeć do celu.",
       sc2_3_2:"Thalorin, tajemniczy elf, i Tommy odkrywają wspólną rodową historię. Zaginione miasto elfów to miejsce, gdzie żyli ich przodkowie. Teraz razem muszą stawić czoła zdradzieckim pułapkom i magii, testując swoją lojalność wobec siebie i grupy.",
       par2_4:"Tommy kontynuuje samotną podróż przez dzikie tereny, głęboko zanurzając się w tajemnice magii, której nigdy dotąd nie doświadczył. Podczas swojej wędrówki odkrywa zapomniane zaklęcia i starożytne artefakty, które poszerzają jego umiejętności. W miarę jak odkrywa kolejne tajemnice, zdobywa wiedzę o swoim przeznaczeniu i roli, jaką ma odegrać w równowadze magii. Jednak na jego drodze pojawiają się nie tylko potężne istoty magiczne, ale również tajemnicze postacie, które próbują skierować go na własną ścieżkę losu.",
       sc2_4_1:"Tommy śledzi tajemnicze postacie, strażników magii, odkrywając, że jego moc jest kluczowa do przywrócenia równowagi zagrożonej przez nowe siły. Musi zdecydować, czy dołączyć do strażników czy pójść własną drogą, szukając alternatywnego rozwiązania konfliktu.",
-      sc2_4_2:"Przyłączyć się do podróżników, korzystając z okazji do poznania nowych ludzi i testowania swoich umiejętności w praktyce.",
+      sc2_4_2:" Tommy decyduje się dać się skusić innym możliwościom, eksperymentując z magią, której wcześniej nie próbował. To prowadzi go na nieznane terytoria i otwiera drzwi do jeszcze większych tajemnic, ale może też niesie ze sobą ryzyko utraty kontroli nad swoimi mocami.",
     },
   };
 
@@ -88,6 +98,7 @@ const Home = () => {
                 {selectedScenario === 'sc1' ? (
                   <div>
                     <p>{gameStories[selectedGame].par1_1}</p>
+                    <audio ref={audioRef} src={audioSrcSc} type="audio/mp3" autoPlay />
                     <button className="buttonSelectionScennario" onClick={() => selectScenario('sc1_1_1')}>
                       {gameStories[selectedGame].sc1_1_1}
                     </button>
@@ -98,6 +109,7 @@ const Home = () => {
                 ) :selectedScenario === 'sc2' ? (
                   <div>
                   <p>{gameStories[selectedGame].par1_2}</p>
+                  <audio ref={audioRef} src={audioSrcSc} type="audio/mp3" autoPlay />
                   <button className="buttonSelectionScennario" onClick={() => selectScenario('sc1_2_1')}>
                     {gameStories[selectedGame].sc1_2_1}
                   </button>
@@ -108,6 +120,7 @@ const Home = () => {
                 ) :selectedScenario === 'sc1_1_1' ? (
                   <div>
                   <p>{gameStories[selectedGame].par2_1}</p>
+                  <audio ref={audioRef} src={audioSrcSc} type="audio/mp3" autoPlay />
                   <button className="buttonSelectionScennario" onClick={() => selectScenario('sc2_1_1')}>
                     {gameStories[selectedGame].sc2_1_1}
                   </button>
@@ -118,6 +131,7 @@ const Home = () => {
                 ) :selectedScenario === 'sc1_1_2' ? (
                   <div>
                   <p>{gameStories[selectedGame].par2_2}</p>
+                  <audio ref={audioRef} src={audioSrcSc} type="audio/mp3" autoPlay />
                   <button className="buttonSelectionScennario" onClick={() => selectScenario('sc2_2_1')}>
                     {gameStories[selectedGame].sc2_2_1}
                   </button>
@@ -128,6 +142,7 @@ const Home = () => {
                 ) :selectedScenario === 'sc1_2_1' ? (
                   <div>
                   <p>{gameStories[selectedGame].par2_3}</p>
+                  <audio ref={audioRef} src={audioSrcSc} type="audio/mp3" autoPlay />
                   <button className="buttonSelectionScennario" onClick={() => selectScenario('sc2_3_1')}>
                     {gameStories[selectedGame].sc2_3_1}
                   </button>
@@ -138,6 +153,7 @@ const Home = () => {
                 ) :selectedScenario === 'sc1_2_2' ? (
                   <div>
                   <p>{gameStories[selectedGame].par2_4}</p>
+                  <audio ref={audioRef} src={audioSrcSc} type="audio/mp3" autoPlay />
                   <button className="buttonSelectionScennario" onClick={() => selectScenario('sc2_4_1')}>
                     {gameStories[selectedGame].sc2_4_1}
                   </button>
@@ -145,21 +161,23 @@ const Home = () => {
                     {gameStories[selectedGame].sc2_4_2}
                   </button>
                 </div>
-                ):(<h1>Ciąg dalszy nastąpi...</h1>)}
+                ):(<h1>Ciąg dalszy nastąpi...</h1>
+)}
+              </div>
+                ) : (
+                  <div className="paragraphOne">
+                    <p>{gameStories[selectedGame].intro}</p>
+                    <audio ref={audioRef} src={audioSrc} type="audio/mp3" autoPlay />
+                    <button className="buttonSelectionScennario" onClick={() => selectScenario('sc1')}>
+                      {gameStories[selectedGame].sc1}
+                    </button>
+                    <button className="buttonSelectionScennario" onClick={() => selectScenario('sc2')}>
+                      {gameStories[selectedGame].sc2}
+                    </button>
+                  </div>
+                )}
               </div>
             ) : (
-              <div className="paragraphOne">
-                <p>{gameStories[selectedGame].intro}</p>
-                <button className="buttonSelectionScennario" onClick={() => selectScenario('sc1')}>
-                  {gameStories[selectedGame].sc1}
-                </button>
-                <button className="buttonSelectionScennario" onClick={() => selectScenario('sc2')}>
-                  {gameStories[selectedGame].sc2}
-                </button>
-              </div>
-            )}
-          </div>
-        ) : (
           <div className="welcome-text">
             {[...text].map((letter, index) => (
               <span key={index} className="bounce-letter">
