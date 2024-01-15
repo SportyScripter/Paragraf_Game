@@ -133,7 +133,7 @@ button:hover {
 }
 .paragraphOne {
   padding: 30px 20px;
-  background-color: rgba(111, 126, 111, 0.4);
+  background-color: rgba(0, 0, 0, 0.7);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-radius:initial;
   border-style: double;
