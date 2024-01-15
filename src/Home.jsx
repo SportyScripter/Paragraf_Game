@@ -8,19 +8,17 @@ const Home = () => {
   const [storyProgress, setStoryProgress] = useState(0);
   const audioRef = useRef(null);
   const audioSrc = `/public/sound/${selectedGame.replace(/ /g, '')}Intro.mp3`;
-  const audioSrcSc = `/public/sound/${selectedGame.replace(/ /g, '').concat(selectedScenario)}.mp3`;
+  // const audioSrcSc = `/public/sound/${selectedGame.replace(/ /g, '').concat(selectedScenario)}.mp3`;
+  const audioSrcSc = `https://github.com/SportyScripter/Paragraf_Game/blob/TekstToSpeach/public/sound/${selectedGame.replace(/ /g, '').concat(selectedScenario)}.mp3`;
+  
 
-
-  // Funkcja odtwarzająca dźwięk
   const playAudio = () => {
     if (audioRef.current) {
       audioRef.current.play();
     }
   };
-  // Initialize text state
   const [text, setText] = useState("Witaj w mojej aplikacji!");
 
-  // Define gameStories object
   const gameStories = {
     'Enzo and Nova': {
       intro: "W Eldorionie, Enzo i Nova wyruszyli na niebezpieczną wyprawę, ścigając zkażoną Zephyrę. Ich droga wiodła przez zaczarowane lasy, gdzie dawne istoty magiczne uśpione od wieków zaczęły się budzić. Enzo zauważył, że ma zdolność wywoływania pierwiastków przyrody, co okazało się kluczem do odkrywania ukrytych ścieżek i unikania pułapek. W pewnym momencie, Zephyra skonfrontowała ich w postaci olśniewającej figury złączającej magię i technologię. Enzo stoi teraz przed wyborem:",
@@ -80,9 +78,6 @@ const Home = () => {
     setStoryProgress(storyProgress + 1);
   };
   const dynamicClass = `${selectedGame.replace(/ /g, '')}${selectedScenario}`;
-
-
-
 
   return (
     <div className={`container ${dynamicClass}`}>
@@ -187,7 +182,6 @@ const Home = () => {
           </div>
         )
       ) : (
-        // Code for the start page
         <div className="home-container">
           <h1 className="game-title">Welcome to Paragraph Game!</h1>
           <button className="start-button" onClick={startGame}>
@@ -195,8 +189,6 @@ const Home = () => {
           </button>
         </div>
       )}
-  
-      {/* Add the game selection logic */}
       {gameStarted && !selectedGame && (
         <div className="game-selection">
           <h2 className="select-game">Select a game:</h2>
