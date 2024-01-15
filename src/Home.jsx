@@ -90,7 +90,7 @@ const Home = () => {
   return (
     <div className={`container ${dynamicClass}`}>
        <button className='mute-button' onClick={toggleMute}>
-       {isMuted ? <img url="/public/image/mute.jpeg" alt="Wyciszony" /> : <img url="/public/image/unmute.jpeg" alt="Głośnik" />}
+       {isMuted ? <img src="https://github.com/SportyScripter/Paragraf_Game/blob/main/public/image/mute.jpeg?raw=true&sanitize=true" /> : <img src="https://github.com/SportyScripter/Paragraf_Game/blob/main/public/image/unmute.jpeg?raw=true&sanitize=true" />}
       </button>
       {gameStarted ? (
         selectedGame ? (
