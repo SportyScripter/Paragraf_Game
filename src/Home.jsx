@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+import React from 'react';
 import './App.css';
 const Home = () => {
   const startGame = () => {setGameStarted(true);};
@@ -10,6 +11,14 @@ const Home = () => {
   const audioSrc = `https://github.com/SportyScripter/Paragraf_Game/blob/main/public/sound/${selectedGame.replace(/ /g,'')}Intro.mp3?raw=true&sanitize=true`;
   const audioSrcSc = `https://github.com/SportyScripter/Paragraf_Game/blob/main/public/sound/${selectedGame.replace(/ /g,'').concat(selectedScenario)}.mp3?raw=true&sanitize=true`;
   
+  const [isMuted, setIsMuted] = useState
+  (false);  // New state for mute control
+  // ... (rest of your existing code)
+  // Function to toggle mute state
+  const toggleMute = () => {
+    setIsMuted(!isMuted);
+  };
+
 
   const playAudio = () => {
     if (audioRef.current) {
@@ -80,19 +89,19 @@ const Home = () => {
 
   return (
     <div className={`container ${dynamicClass}`}>
-      
+       <button className='mute-button' onClick={toggleMute}>
+       {isMuted ? <img src="public\image\mute.jpeg" alt="Wyciszony" /> : <img src="public\image\unmute.jpeg" alt="Głośnik" />}
+      </button>
       {gameStarted ? (
         selectedGame ? (
-          // Code for the selected game
           <div className='gameSettings'>
             <h1>{selectedGame}</h1>
             {selectedScenario ? (
-              // Code for the selected scenario
               <div className= 'paragraphOne'>
                 {selectedScenario === 'sc1' ? (
                   <div>
                     <p>{gameStories[selectedGame].par1_1}</p>
-                    <audio ref={audioRef} src={audioSrcSc} type="audio/mp3" autoPlay />
+                    <audio ref={audioRef} src={selectedScenario ? audioSrcSc : audioSrc} type="audio/mp3" autoPlay muted={isMuted}/>
                     <button className="buttonSelectionScennario" onClick={() => selectScenario('sc1_1_1')}>
                       {gameStories[selectedGame].sc1_1_1}
                     </button>
@@ -103,7 +112,7 @@ const Home = () => {
                 ) :selectedScenario === 'sc2' ? (
                   <div>
                   <p>{gameStories[selectedGame].par1_2}</p>
-                  <audio ref={audioRef} src={audioSrcSc} type="audio/mp3" autoPlay />
+                  <audio ref={audioRef} src={selectedScenario ? audioSrcSc : audioSrc} type="audio/mp3" autoPlay muted={isMuted}/>
                   <button className="buttonSelectionScennario" onClick={() => selectScenario('sc1_2_1')}>
                     {gameStories[selectedGame].sc1_2_1}
                   </button>
@@ -114,7 +123,7 @@ const Home = () => {
                 ) :selectedScenario === 'sc1_1_1' ? (
                   <div>
                   <p>{gameStories[selectedGame].par2_1}</p>
-                  <audio ref={audioRef} src={audioSrcSc} type="audio/mp3" autoPlay />
+                  <audio ref={audioRef} src={selectedScenario ? audioSrcSc : audioSrc} type="audio/mp3" autoPlay muted={isMuted}/>
                   <button className="buttonSelectionScennario" onClick={() => selectScenario('sc2_1_1')}>
                     {gameStories[selectedGame].sc2_1_1}
                   </button>
@@ -125,7 +134,7 @@ const Home = () => {
                 ) :selectedScenario === 'sc1_1_2' ? (
                   <div>
                   <p>{gameStories[selectedGame].par2_2}</p>
-                  <audio ref={audioRef} src={audioSrcSc} type="audio/mp3" autoPlay />
+                  <audio ref={audioRef} src={selectedScenario ? audioSrcSc : audioSrc} type="audio/mp3" autoPlay muted={isMuted}/>
                   <button className="buttonSelectionScennario" onClick={() => selectScenario('sc2_2_1')}>
                     {gameStories[selectedGame].sc2_2_1}
                   </button>
@@ -136,7 +145,7 @@ const Home = () => {
                 ) :selectedScenario === 'sc1_2_1' ? (
                   <div>
                   <p>{gameStories[selectedGame].par2_3}</p>
-                  <audio ref={audioRef} src={audioSrcSc} type="audio/mp3" autoPlay />
+                  <audio ref={audioRef} src={selectedScenario ? audioSrcSc : audioSrc} type="audio/mp3" autoPlay muted={isMuted}/>
                   <button className="buttonSelectionScennario" onClick={() => selectScenario('sc2_3_1')}>
                     {gameStories[selectedGame].sc2_3_1}
                   </button>
@@ -147,7 +156,7 @@ const Home = () => {
                 ) :selectedScenario === 'sc1_2_2' ? (
                   <div>
                   <p>{gameStories[selectedGame].par2_4}</p>
-                  <audio ref={audioRef} src={audioSrcSc} type="audio/mp3" autoPlay />
+                  <audio ref={audioRef} src={selectedScenario ? audioSrcSc : audioSrc} type="audio/mp3" autoPlay muted={isMuted}/>
                   <button className="buttonSelectionScennario" onClick={() => selectScenario('sc2_4_1')}>
                     {gameStories[selectedGame].sc2_4_1}
                   </button>
@@ -161,7 +170,7 @@ const Home = () => {
                 ) : (
                   <div className="paragraphOne">
                     <p>{gameStories[selectedGame].intro}</p>
-                    <audio ref={audioRef} src={audioSrc} type="audio/mp3" autoPlay />
+                    <audio ref={audioRef} src={selectedScenario ? audioSrcSc : audioSrc} type="audio/mp3" autoPlay muted={isMuted}/>
                     <button className="buttonSelectionScennario" onClick={() => selectScenario('sc1')}>
                       {gameStories[selectedGame].sc1}
                     </button>
@@ -171,6 +180,7 @@ const Home = () => {
                   </div>
                 )}
               </div>
+              
             ) : (
           <div className="welcome-text">
             {[...text].map((letter, index) => (
