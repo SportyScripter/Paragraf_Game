@@ -9,7 +9,7 @@ const Home = () => {
   const audioRef = useRef(null);
   const audioSrc = `/public/sound/${selectedGame.replace(/ /g, '')}Intro.mp3`;
   // const audioSrcSc = `/public/sound/${selectedGame.replace(/ /g, '').concat(selectedScenario)}.mp3`;
-  const audioSrcSc = `https://github.com/SportyScripter/Paragraf_Game/blob/TekstToSpeach/public/sound/${selectedGame.replace(/ /g, '').concat(selectedScenario)}.mp3`;
+  const audioSrcSc = `https://github.com/NazwaUżytkownika/NazwaRepozytorium/blob/main/public/sound/${selectedGame.replace(/ /g, '').concat(selectedScenario)}.mp3?raw=true&sanitize=true`;
   
 
   const playAudio = () => {
